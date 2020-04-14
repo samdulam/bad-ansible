@@ -56,7 +56,7 @@
 
     - name: create ansible tomcat directory
       file:
-        path: /usr/share/tomcat/webapps/ROOT
+        path: /usr/share/tomcat/webapps/ansible
         state: directory
 
     - name: copy static index.html to tomcat webapps/ansible/index.html

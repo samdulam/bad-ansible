@@ -1,0 +1,9 @@
+---
+# Check if the 3 Tier App is Working
+
+- name: setup load-balancer tier
+  hosts: local
+  roles:
+    - {name: checks, tags: testing}
+
+

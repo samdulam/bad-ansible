@@ -2,6 +2,8 @@
 # Check if the 3 Tier App is Working
 
 - name: test url
+  hosts: 127.0.0.1
+  connection: local
   roles:
     - {name: checks, tags: testing}
 

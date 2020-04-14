@@ -95,19 +95,35 @@
   become: true
   hosts: appdbs
   tasks:
-    - name: install progress
+    - name: install postgresql
       package:
         name: postgresql-server
         state: latest
+    - name: Ensure PostgreSQL data directory exists.
+      file:
+        path: "/var/lib/pgsql/data"
+        owner: "postgres"
+        group: "postgres"
+        state: directory
+        mode: 0700
 
-    - name: enable apache at boot
+    - name: Check if PostgreSQL database is initialized.
+      stat:
+        path: "/var/lib/pgsql/data/PG_VERSION"
+      register: pgdata_dir_version
+
+    - name: Ensure PostgreSQL database is initialized.
+      command: "/usr/bin/initdb -D /var/lib/pgsql/data"
+      when: not pgdata_dir_version.stat.exists
+      become: true
+      become_user: "postgres"
+      vars:
+        ansible_ssh_pipelining: true
+
+    - name: enable postgresql at boot
       service:
         name: postgresql
         enabled: 'yes'
-
-    - name: tell user to finish setting up postgres
-      debug:
-        msg: Either uncomment the postgres setup or manually login and initialize
 
     - name: start postgres
       service:

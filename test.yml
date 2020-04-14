@@ -1,7 +1,7 @@
 ---
 # Check if the 3 Tier App is Working
 
-- name: setup load-balancer tier
+- name: test url
   roles:
     - {name: checks, tags: testing}
 

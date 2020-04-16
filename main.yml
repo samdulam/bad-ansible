@@ -1,7 +1,13 @@
 ---
-# Setup front-end load balancer tier
+
+- hosts: 127.0.0.1
+  connection: local
+  become: yes
+  roles:
+    - name: osp-facts
 
 
+  # Setup front-end load balancer tier
 - name: setup load-balancer tier
   hosts: frontends
   roles:

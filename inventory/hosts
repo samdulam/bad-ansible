@@ -1,13 +1,1 @@
-<<<<<<< HEAD
 127.0.0.1
-=======
-[frontends]
-frontend1.57c2.internal ansible_ssh_host=frontend1.57c2.example.opentlc.com
-
-[apps]
-app1.57c2.internal ansible_ssh_host=app1.57c2.example.opentlc.com
-app2.57c2.internal ansible_ssh_host=app2.57c2.example.opentlc.com
-
-[appdbs]
-appdb1.57c2.internal ansible_ssh_host=appdb1.57c2.example.opentlc.com
->>>>>>> 8e5235475379d087dce6559aef50e21c471e626f

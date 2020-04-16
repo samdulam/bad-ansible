@@ -4,7 +4,7 @@
   connection: local
   become: yes
   roles:
-    - name: osp-facts
+    - {name: osp-facts, tags: osp-facts}
 
 
   # Setup front-end load balancer tier

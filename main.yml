@@ -30,12 +30,3 @@
   roles:
     - {name: base-config, tags: base-config}
     - {name: geerlingguy.postgresql, tags: [dbs, postgres]}
-
-
-# Run smoke test
-
-- name: test url
-  hosts: 127.0.0.1
-  connection: local
-  roles:
-    - {name: checks, tags: testing}

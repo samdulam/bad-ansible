@@ -1,0 +1,19 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 1,
+      "title": "BIND 9",
+      "description": "Flexible and full-featured DNS system",
+      "platform": "linux",
+      "name": "BIND9",
+      "image": "bind9:alpine",
+      "ports": [
+        "53/tcp",
+        "53/utp",
+        "953/tcp"
+      ],
+      "restart_policy": "always"
+    }
+  ]
+}

@@ -10,7 +10,7 @@
       "image": "nginx:latest",
       "ports": [
         "80/tcp",
-        "80/utp",
+        "80/udp",
         "443/tcp"
       ],
       "restart_policy": "always"

@@ -3,15 +3,15 @@
   "templates": [
     {
       "type": 1,
-      "title": "BIND 9",
-      "description": "Flexible and full-featured DNS system",
+      "title": "nginx",
+      "description": "Test NGINX",
       "platform": "linux",
-      "name": "BIND9",
-      "image": "bind9:alpine",
+      "name": "nginx",
+      "image": "nginx:latest",
       "ports": [
-        "53/tcp",
-        "53/utp",
-        "953/tcp"
+        "80/tcp",
+        "80/utp",
+        "443/tcp"
       ],
       "restart_policy": "always"
     }
